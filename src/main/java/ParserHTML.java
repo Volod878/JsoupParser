@@ -9,7 +9,6 @@ public class ParserHTML {
     public static void main(String[] args) throws IOException {
         File html = new File("test_html.html");
         Document document = Jsoup.parse(html, "UTF-8");
-        document.outputSettings().syntax(Document.OutputSettings.Syntax.html);
         Element fullNameElements = document.selectFirst("p.full_name");
 
         String[] fullName = fullNameElements.text().split(" ");
